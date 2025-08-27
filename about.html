@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about me</title>
+
+<style>
+    ::selection {
+        background-color: #b14d4d;
+        color: #80d8e2;
+    }
+    * {
+        padding : 0;
+        margin : 0;
+        font-family: 'sans-serif', monospace;
+        box-sizing : border-box;
+    }
+    html {
+        position: relative;
+        /* overflow: hidden; */
+        overflow-x: hidden;
+        background: #0d0d0d;
+    }
+    html::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* filter: brightness(25%); */
+        z-index: -1;
+        
+    }
+    a {
+        text-decoration : none;
+        color : #ffffff; /* change the color of links */
+    }
+    a.active {
+        color : #000000; /* change the color of active links */
+    }
+    .title::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .title {
+        display: flex;
+        font : 900 30px sans-serif;
+        color : #dcdcdc;
+        text-decoration : none;
+        transition: all 0.25s ease-in-out;
+        transform: translateX(-45px);
+        align-items: center;
+    }
+    .title:hover {
+        color : #ffffff;
+        transform: translateX(40px);
+    }
+    .title img {
+        width : 50px;
+        height : 50px;
+        border-radius : 50%;
+        object-fit : cover;
+        object-position : center;
+        border: #00000000 solid 5px ;
+        z-index: 3;
+        position: relative;
+        transform: translateX(-50px);
+        
+    }
+    
+    header[ id = "header" ] {
+        display : flex;
+        justify-content : space-between;
+        align-items : center;
+        background: #1f1f1f;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        
+        padding : 20px;
+        z-index: 1024;
+        border-bottom: #000000 solid 1px ;
+    }
+    nav ul {
+        display : flex;
+        list-style : none;
+        justify-content: center;
+        align-items: center;
+    }
+    nav ul li {
+        margin-left : 20px;
+    }
+    nav ul li a {
+        color: #dcdcdc;
+        padding : 10px;
+        background: linear-gradient(to right, #ffffff) no-repeat right bottom;
+        background-size: 0 2px;
+        transition: background-size 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    nav ul li a:hover {
+        background-position-x: left;
+        background-size: 100% 2px;
+        color: #ffffff;
+    }
+    nav #login_li button {
+        background-color: #b14d4d;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+    }
+    nav #login_li button:hover {
+        background-color: #863c3c;
+    }
+    nav #login_li button:focus {
+        outline: none;
+    }
+    nav #login_li button:active {
+        transform: scale(0.9, 0.9);
+    }
+    .my_avatar img {
+        width : 350px;
+        height : 350px;
+        border-radius : 50%;
+        object-fit : cover;
+        object-position : center;
+        border: #00000000 solid 4px ;
+        z-index: 3;
+        position: relative;
+    }
+    
+    .glowing_border {
+        position: relative;
+        width: 350px;
+        height: 350px;
+        /* background-color: #ffffff; */
+        overflow: hidden;
+        transform-style: preserve-3d;
+        border-radius: 50%;
+        position: relative;
+        
+    }
+    .glowing_border::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: calc(100% - 8px);
+        height: calc(100% - 8px);
+        background-color: #000000ff;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 2;
+        will-change: transform;
+        backface-visibility: hidden;
+    }
+    .glowing_border::after {
+        content: "";
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        border-radius: 20px;
+        top: 3px;
+        left: 3px;
+        background-color: #b14d4d;
+        z-index: 1;
+        top: -25%;
+        left: -25%;
+        background-image: conic-gradient(#ff0000, #e1ff00, #00ff00, #00ffc8, #005eff, #ae00ff, #ff00bf);
+        
+    }
+    .glowing_border:hover::after {
+        animation: rotate 0.5s ease;
+    }
+    
+    @keyframes rotate {
+        0% {
+            transform: rotate3d(0, 0, 1, 0deg);
+        }
+        100% {
+            transform: rotate3d(0, 0, 1, 360deg);
+        }
+        
+    }
+
+</style>
+
+</head>
+<body>
+    <header id="header">
+        <!-- <img src="./media/images/logo.png" alt="logo" width="50vw" height="50vw" z-index="3" /> -->
+        <a class="title" href="index.html">
+            <img src="./media/images/Image_20250413101339.jpg" alt="logo" />
+            Hayden(=^ω^=)
+        </a>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li id="login_li"><button type="button">Log in</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <a name="head_self_a"></a>
+        <section class="head_self">
+            <div class="parallax_layer"></div>
+            <span class="my_avatar">
+                <div class="glowing_border">
+
+                    <img src="./media/images/avatar_square.jpg" alt="my avatar" />
+                </div>
+            </span>
+            <header>
+                <h2>Hayden</h2> <br>
+                <h3>Gamer, Programmer, Designer</h3>
+            </header>
+        </section>
+        <div class="dividing_line"><p>About me</p></div>
+
+    </main>
+    <footer>
+        <p>&copy; 2022 Hayden. All rights reserved.</p>
+        <!-- more -->
+    </footer>
+    <div class="modal-overlay"></div> 
+    <div class="login-modal">
+        <form action="javaScript:get_login()" method="post">
+            <h2 style="color: white; margin-bottom: 20px; text-align: center;">Login</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign in</button>
+            <div class="other_options">
+                <a href="#">Forgot password?</a>
+                <a href="#">Create an account</a>
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>

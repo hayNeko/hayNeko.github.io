@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Visualizer</title>
+
+<style>
+    html {
+        background: #0d0d0d;
+    }
+    canvas {
+        background: #000;
+    }
+    .controls {
+        margin: 20px 0;
+    }
+</style>
+
+</head>
+<body>
+    <div class="controls">
+    <input type="file" id="audioInput" accept="audio/*">
+    <button id="micButton">使用麦克风</button>
+    <button id="playPause">播放/暂停</button>
+    <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+</div>
+<canvas id="visualizer"></canvas>
+<script>
+const canvas = document.getElementById('visualizer');
+const ctx = canvas.getContext('2d');
+const audioInput = document.getElementById('audioInput');
+const micButton = document.getElementById('micButton');
+const playPauseButton = document.getElementById('playPause');
+const volumeControl = document.getElementById('volume');
+
+// 初始化音频上下文
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+let audioSource = null;
+let analyser = null;
+
+// 设置分析器
+function setupAnalyser() {
+    analyser = audioContext.createAnalyser();
+    analyser.fftSize = 256;
+}
+
+// 调整画布尺寸
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight * 0.7;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// 可视化绘制函数
+function draw() {
+    requestAnimationFrame(draw);
+    
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
+    analyser.getByteFrequencyData(dataArray);
+
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // 柱状图可视化
+    const barWidth = (canvas.width / bufferLength) * 1;
+    let x = 0;
+
+    for(let i = 0; i < bufferLength; i++) {
+        const barHeight = (dataArray[i] / 255) * canvas.height / 1.25;
+        const hue = i * 360 / bufferLength;
+        
+        ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
+        ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+        x += barWidth + 1;
+    }
+}
+
+// 处理文件输入
+audioInput.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        audioContext.decodeAudioData(e.target.result, function(buffer) {
+            if (audioSource) audioSource.stop();
+            
+            audioSource = audioContext.createBufferSource();
+            audioSource.buffer = buffer;
+            
+            setupAnalyser();
+            audioSource.connect(analyser);
+            analyser.connect(audioContext.destination);
+            
+            audioSource.start(0);
+        });
+    };
+    reader.readAsArrayBuffer(file);
+});
+
+// 处理麦克风输入
+micButton.addEventListener('click', async () => {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        if (audioSource) audioSource.stop();
+        
+        audioSource = audioContext.createMediaStreamSource(stream);
+        setupAnalyser();
+        audioSource.connect(analyser);
+        analyser.connect(audioContext.destination);
+    } catch (err) {
+        console.error('无法获取麦克风权限:', err);
+    }
+});
+
+// 播放控制
+playPauseButton.addEventListener('click', () => {
+    if (audioContext.state === 'running') {
+        audioContext.suspend();
+    } else if (audioContext.state === 'suspended') {
+        audioContext.resume();
+    }
+});
+
+// 音量控制
+volumeControl.addEventListener('input', (e) => {
+    const gainNode = audioContext.createGain();
+    gainNode.gain.value = e.target.value;
+    audioSource.connect(gainNode);
+    gainNode.connect(analyser);
+});
+
+// 启动可视化
+draw();
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>
