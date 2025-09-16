@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogmakingpublicity</title>
+    <link rel="stylesheet" href="./index-stylecss.css">
+<style>
+
+.blog_post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    height: 75vh;
+    margin-top: 100px;
+    background: #1f1f1f;
+}
+
+.blog_post h1 {
+    margin-top: 20%;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+.blog_post p {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <header id="header">
+        <!-- <img src="./media/images/logo.png" alt="logo" width="50vw" height="50vw" z-index="3" /> -->
+        <a class="title" href="index.html">
+            <img src="./media/images/avatarMikuHatsune.jpg" alt="logo" />
+            Hayden(=^ω^=)
+        </a>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="./blogmakingpublicity.html">Blog</a></li>
+                <li id="login_li"><button type="button">Log in</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="blog_post">
+            <h1>Blog Making Publicity | 一起制作博客网站的通知</h1>
+            <p>
+                找一个会基础网页制作（在html，css和javascript有一定基础）的同学一起搭建一个博客（二次元风格或其他）<br>
+
+                联系我<br>
+                邮箱：<code>haydenwong825@gmail.com</code><br>
+                WeChat ID: <code>mikude39nekodesu</code><br><br>
+                请说明以下事项：<br>
+                
+                你来自哪里？<br>
+                你对网站制作的了解？<br>
+                你希望网站的风格是什么样的？<br>
+
+            </p>
+        </section>
+
+        <section class="contact_and_social">
+            <div class="my_informations">
+                <div class="social_medias">
+                    <a href="https://github.com/hayNeko/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="informations">
+                    <h2>Hayden</h2>
+                    <h3>Gamer, Programmer, Designer</h3>
+                    <a href="#">Contact me</a>
+                    <div class="email">
+                        <a href="#">just.for.an.example@gmail.com</a>
+                    </div>
+                </div>
+        
+            </div>
+        
+        </section>
+    </main>
+    <footer>
+        <p>Hayden</p>
+        <!-- more -->
+        <!-- <a href="./funny.html">test web</a> -->
+    </footer>
+    <div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+    <div class="modal-overlay"></div> 
+    <div class="login-modal">
+        <img src="media/images/side-picture.jpg" alt="avatar" >
+        <form action="javaScript:get_login()" method="post">
+            <h2 style="color: white; margin-bottom: 20px; text-align: center;">Welcome back</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign in</button>
+            <div class="other_options">
+                <a href="#">Forgot password?</a>
+                <a href="#">Create an account</a>
+
+            </div>
+        </form>
+    </div>
+    
+</body>
+<script>
+    document.querySelector('.glowing_border').addEventListener('mouseenter', function () {
+        this.style.animationPlayState = 'running';
+    });
+    document.querySelector('.glowing_border').addEventListener('mouseleave', function () {
+        this.style.animationPlayState = 'paused';
+    });
+    // // 视口外暂停动画
+    // const observer = new IntersectionObserver(entries => {
+    //     entries.forEach(entry => {
+    //         entry.target.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+    //     });
+    // });
+    // document.addEventListener('wheel', function(e) {
+    //     e.preventDefault();
+    //     // 水平滚动锁定
+    //     if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+
+    //     window.scrollBy({
+    //         top: e.deltaY * 1,
+    //         left: 0,
+    //         behavior: 'smooth'
+    //     });
+    // }, { passive: false });
+
+    // document.addEventListener('scroll', () => {
+    //     const yPos = window.pageYOffset * 0.5;
+    //     document.querySelector('.parallax_layer').style.transform = 
+    //         `translate3d(0, ${yPos}px, 0)`;
+    // });
+
+
+
+    document.querySelector('#login_li button').addEventListener('click', function (e) {
+        const btn = e.target;
+        const rect = btn.getBoundingClientRect();
+        btn.style.visibility = 'hidden';
+
+        // // 计算相对视口的绝对位置
+        // const startX = rect.left + window.scrollX;
+        // const startY = rect.top + window.scrollY;
+
+        // // 创建动画按钮副本
+        const cloneBtn = btn.cloneNode(true);
+        cloneBtn.classList.add('login-btn-animate');
+
+
+        // 使用requestAnimationFrame确保流畅动画
+        requestAnimationFrame(() => {
+            // 动画完成后显示模态框
+            setTimeout(() => {
+                document.querySelector('.login-modal').classList.add('active');
+                document.querySelector('.modal-overlay').classList.add('active');
+                cloneBtn.remove();
+                btn.style.visibility = 'visible';
+            }, 1);
+        });
+    });
+
+    // 关闭模态框时恢复滚动
+    document.querySelector('.modal-overlay').addEventListener('click', function () {
+        document.querySelector('.login-modal').classList.remove('active');
+        this.classList.remove('active');
+    });
+
+
+    function get_login() {
+
+        const username = document.querySelector('input[type="text"]').value;
+        const password = document.querySelector('input[type="password"]').value;
+        console.log(username, password);
+
+        //check login
+        if (username === 'haynekogithubio' && password === 'haynekogithubio') {
+            alert('Login success!');
+            reset_login_form();
+
+            window.location.href = 'index.html';
+        } else {
+            alert('Login failed, please check your username and password.');
+        }
+    }
+
+    // 重载或刷新页面时关闭模态框，清除过往登录框内的输入内容
+    // 登录后登录框内的输入内容仍然保留
+
+    function reset_login_form() {
+        ;
+        document.querySelector('.login-modal').classList.remove('active');
+        document.querySelector('.modal-overlay').classList.remove('active');
+        document.querySelector('input[type="text"]').value = '';
+        document.querySelector('input[type="password"]').value = '';
+    };
+
+    document.addEventListener('beroreunload', function () {
+        reset_login_form();
+    });
+
+
+
+</script>
+<script src="https://kit.fontawesome.com/1600b40260.js" crossorigin="anonymous"></script>
+<script src="live2dqw/assets/jquery.min.js?v=3.3.1"></script>
+<script src="live2dqw/assets/jquery-ui.min.js?v=1.12.1"></script>
+<!-- <script src="live2dqw/assets/autoload.js"></script> -->
+<script src="live2dqw/assets/waifu-tips.js"></script>
+<script src="live2dqw/assets/live2d.min.js?v=1.0.5"></script>
+<script src="live2dqw/assets/live2d.js"></script>
+<script type="text/javascript">
+    /* 可直接修改部分参数 */
+    live2d_settings['modelId'] = 2;                  // 默认模型 ID
+    live2d_settings['modelTexturesId'] = 87;         // 默认材质 ID
+    live2d_settings['modelStorage'] = false;         // 不储存模型 ID
+    live2d_settings['canCloseLive2d'] = false;       // 隐藏 关闭看板娘 按钮
+    live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
+    live2d_settings['waifuSize'] = '300x300';        // 看板娘大小
+    live2d_settings['waifuTipsSize'] = '250x120';    // 提示框大小
+    live2d_settings['waifuFontSize'] = '16px';       // 提示框字体
+    live2d_settings['waifuToolFont'] = '20px';       // 工具栏字体
+    live2d_settings['waifuToolLine'] = '30px';       // 工具栏行高
+    live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
+    live2d_settings['waifuDraggable'] = 'axis-x';    // 拖拽样式
+    /* 在 initModel 前添加 */
+    initModel("live2dqw/assets/waifu-tips.json?v=1.4.2")
+</script>
+
+<script type="text/javascript">
+
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('nav');
+
+    mobileMenuBtn.addEventListener('click', function () {
+        this.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+    // 点击导航链接关闭菜单
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuBtn.classList.remove('active');
+            nav.classList.remove('active');
+        });
+    });
+
+</script>
+</html>

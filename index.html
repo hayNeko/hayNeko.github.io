@@ -26,6 +26,7 @@
                 <li><a href="" style="cursor:not-allowed;pointer-events:none;">Home</a></li>
                 <li><a href="./about.html">About</a></li>
                 <li><a href="#">Contact</a></li>
+                <li><a href="./blogmakingpublicity.html">Blog</a></li>
                 <li id="login_li"><button type="button">Log in</button></li>
             </ul>
         </nav>
@@ -85,6 +86,17 @@
                     
                 </p>
                 <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="boxes">
+            <span></span>
+            <div class="about_me_content">
+                <h2>My python projects</h2>
+                <p>
+                    I have made some python projects, like a python assembler, a python interpreter, and a python game.<br>
+                    You can check out my python assembler project by clicking the link below.
+                </p>
+                <a href="python-assembler.html" target="_blank">Read More</a>
             </div>
         </div>
         <!-- <div class="boxes">
@@ -251,7 +263,7 @@ function get_login() {
     console.log(username, password);
 
     //check login
-    if (username === 'qwe' && password === '123') {
+    if (username === 'haynekogithubio' && password === 'haynekogithubio') {
         alert('Login success!');
         reset_login_form();
         
@@ -284,9 +296,10 @@ document.addEventListener('beroreunload', function() {
 <!-- <script src="live2dqw/assets/autoload.js"></script> -->
 <script src="live2dqw/assets/waifu-tips.js"></script>
 <script src="live2dqw/assets/live2d.min.js?v=1.0.5"></script>
+<script src="live2dqw/assets/live2d.js"></script>
 <script type="text/javascript">
         /* 可直接修改部分参数 */
-        live2d_settings['modelId'] = 1;                  // 默认模型 ID
+        live2d_settings['modelId'] = 2;                  // 默认模型 ID
         live2d_settings['modelTexturesId'] = 87;         // 默认材质 ID
         live2d_settings['modelStorage'] = false;         // 不储存模型 ID
         live2d_settings['canCloseLive2d'] = false;       // 隐藏 关闭看板娘 按钮
@@ -314,9 +327,6 @@ document.addEventListener('beroreunload', function() {
     let particles = [];
     const particleCount = 150,
         colors = ["#FF6B6B", "#FED766", "#AEC6CF", "#5DD39E"];
-        // circleRadius = 1000;
-    // const maxCircleRadius = 1000,
-    //     circleColor = "rgba(255, 255, 255, 0.3)";
     let animationFrameId;
 
     function resizeCanvas() {
@@ -344,13 +354,6 @@ document.addEventListener('beroreunload', function() {
         }
     }
     
-    // function drawCircle() {
-    //     circleRadius >= 10 ? circleRadius -= 50 : circleRadius = maxCircleRadius;
-    //     ctx.beginPath();
-    //     ctx.arc(mouseX, mouseY, circleRadius, 0, 2 * Math.PI);
-    //     ctx.strokeStyle = circleColor, ctx.lineWidth = 2, ctx.stroke()
-    // }
-    
     function update() {
         ctx.clearRect(0, 0, canvas.width, canvas.height), drawParticles(), animationFrameId = requestAnimationFrame(update);
     }
@@ -372,15 +375,6 @@ document.addEventListener('beroreunload', function() {
     window.addEventListener("resize", () => {
         resizeCanvas(), ctx.clearRect(0, 0, canvas.width, canvas.height)
     });
-    // window.addEventListener("mousemove", e => {
-    //     mouseX = e.clientX, mouseY = e.clientY
-    // });
-    // window.addEventListener("mousedown", () => {
-    //     isMouseDown = !0
-    // });
-    // window.addEventListener("mouseup", () => {
-    //     isMouseDown = !1, circleRadius = 0
-    // });
     window.addEventListener("load", init);
     
     window.addEventListener("focus", startAnimation);
@@ -396,20 +390,20 @@ document.addEventListener('beroreunload', function() {
     observer.observe(canvas);
 
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const nav = document.querySelector('nav');
+    const nav = document.querySelector('nav');
 
-        mobileMenuBtn.addEventListener('click', function () {
-            this.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
+    mobileMenuBtn.addEventListener('click', function () {
+        this.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
 
-        // 点击导航链接关闭菜单
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                nav.classList.remove('active');
-            });
+    // 点击导航链接关闭菜单
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuBtn.classList.remove('active');
+            nav.classList.remove('active');
         });
+    });
 
 </script>
 
