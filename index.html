@@ -1,25 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hayneko's blog</title>
+    <title>Hayneko's blog</title>
     <link rel="stylesheet" href="indexstyle.css">
 </head>
 <body>
     <header>
-        <nav>
-
-        </nav>
-        <section class="main-page-content">
-
-        </section>
+        <div class="nav-container">
+            <div class="logo">neko</div>
+            <ul class="nav-menu">
+                <li><a href="#">home</a></li>
+                <li><a href="#">articles</a></li>
+                <li><a href="#">albums</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </div>
     </header>
-    <main>
-        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa voluptatum culpa consequuntur ipsam veniam perferendis omnis pariatur. Deleniti reprehenderit eos, vitae consectetur in perferendis numquam placeat, itaque fugit sequi error!</h1>
-    </main>
-    <footer>
 
+    <div class="container">
+        <div class="page-title">
+            <h1>我的二次元日常</h1>
+            <p>分享动漫、游戏与创作的点点滴滴</p>
+        </div>
+
+        <div class="main-blog-posts">
+            <article class="blog-card floating">
+                <div class="card-image">
+                    <img src="https://picsum.photos/400/200?random=1" alt="博客文章图片">
+                    <button class="zoom-btn">+</button>
+                </div>
+                <div class="card-content">
+                    <h3>探索新番《幻想之旅》的奇幻世界</h3>
+                    <p>这部新番以其精美的画风和深刻的剧情引起了广泛关注。今天我们来深入分析一下它的世界观和角色设定...</p>
+                    <div class="card-meta">
+                        <span>2023年10月15日</span>
+                        <span>阅读量: 1,234</span>
+                    </div>
+                    <a href="#" class="read-more">阅读更多</a>
+                </div>
+            </article>
+
+            <article class="blog-card floating">
+                <div class="card-image">
+                    <img src="https://picsum.photos/400/200?random=2" alt="博客文章图片">
+                    <button class="zoom-btn">+</button>
+                </div>
+                <div class="card-content">
+                    <h3>二次元角色设计心得分享</h3>
+                    <p>从线条到上色，从表情到服装，如何打造一个令人难忘的二次元角色？本文将分享我的创作经验与技巧...</p>
+                    <div class="card-meta">
+                        <span>2023年10月10日</span>
+                        <span>阅读量: 987</span>
+                    </div>
+                    <a href="#" class="read-more">阅读更多</a>
+                </div>
+            </article>
+
+            <article class="blog-card floating">
+                <div class="card-image">
+                    <img src="https://picsum.photos/400/200?random=3" alt="博客文章图片">
+                    <button class="zoom-btn">+</button>
+                </div>
+                <div class="card-content">
+                    <h3>游戏《星之海》通关评测</h3>
+                    <p>经过50小时的游戏体验，我终于通关了这款备受期待的RPG游戏。以下是关于剧情、战斗系统和美术风格的全面评测...</p>
+                    <div class="card-meta">
+                        <span>2023年10月5日</span>
+                        <span>阅读量: 1,567</span>
+                    </div>
+                    <a href="#" class="read-more">阅读更多</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="modal" id="imageModal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="photo">
+        </div>
+    </div>
+
+    <button id="back-to-top" title="Back to top">↑</button>
+
+    <div id="live2d-widget"></div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2023 二次元个人博客 |  Designed with ♥</p>
+            <div class="social-links">
+                <a href="#">BiliBili</a>
+                <a href="#">GitHub</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.onscroll = function() {
+            scrollFunction();
+        };
+        
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        }
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        const zoomButtons = document.querySelectorAll('.zoom-btn');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeModal = document.querySelector('.close-modal');
+        
+        zoomButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const cardImage = this.parentElement.querySelector('img');
+                modalImg.src = cardImage.src;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        document.querySelectorAll('.blog-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
 </body>
 </html>
