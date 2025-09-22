@@ -393,7 +393,6 @@ footer {
     transform: translateY(-3px);
 }
 
-/* 动画效果 */
 @keyframes float {
 
     0%,
@@ -410,7 +409,6 @@ footer {
     animation: float 5s ease-in-out infinite;
 }
 
-/* 响应式调整 */
 @media (max-width: 768px) {
     .main-blog-posts {
         grid-template-columns: 1fr;
