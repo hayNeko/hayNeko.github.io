@@ -13,8 +13,8 @@
     --default-font-color: #f1f1f1;
 }
 ::selection {
-    background-color: #742b48;
-    color: var(--default-font-color);
+    background-color: #0937b8;
+    color: #ffffff;
 }
 
 a {
@@ -35,8 +35,10 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     background-image:
+        linear-gradient(to bottom right, rgba(82, 27, 176, 0.125) 0%, transparent 100%),
         radial-gradient(circle at 10% 20%, rgba(28, 28, 54, 0.8) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(42, 39, 79, 0.6) 0%, transparent 20%);
+        radial-gradient(circle at 90% 70%, rgba(42, 39, 79, 0.25) 0%, transparent 20%)
+        ;
     min-height: 100vh;
     display: flex;
 }
