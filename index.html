@@ -11,7 +11,7 @@
 <body>
     <section class="shell">
         <div class="avatar">
-            <img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog">
+            <img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" id="protected">
         </div>
         <a href="#" class="box"><i class="fa-solid fa-house"></i><span>home</span></a>
         <a href="#" class="box"><i class="fa-solid fa-image"></i><span>album</span></a>
@@ -41,6 +41,15 @@
 
 </body>
 <script>
+    const protectedMedia = document.getElementById('protected');
+    protectedMedia.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+    protectedMedia.setAttribute('draggable', false);
+    protectedMedia.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+    });
+
     const backToTopButton = document.getElementById('back-to-top');
     
     window.onscroll = function() {
@@ -62,35 +71,6 @@
         });
     });
     
-    const zoomButtons = document.querySelectorAll('.zoom-btn');
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeModal = document.querySelector('.close-modal');
-    
-    zoomButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const cardImage = this.parentElement.querySelector('img');
-            modalImg.src = cardImage.src;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    });
-    
-    closeModal.addEventListener('click', function() {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    });
-    
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    });
-    
-    document.querySelectorAll('.blog-card').forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-    });
 </script>
 
 <script src="live2dqw/assets/jquery.min.js?v=3.3.1"></script>
