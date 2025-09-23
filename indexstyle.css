@@ -37,134 +37,9 @@ body {
     min-height: 100vh;
 }
 
-/* 头部样式 */
-header {
-    background-color: var(--bg-secondary);
-    padding: 1.5rem 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid var(--accent-primary);
-}
-
-.nav-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--accent-primary);
-    text-shadow: 0 0 10px rgba(233, 69, 132, 0.5);
-    display: flex;
-    align-items: center;
-}
-
-.logo::before {
-    content: "✧";
-    margin-right: 0.5rem;
-    font-size: 2rem;
-}
-
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-}
-
-.nav-menu li {
-    margin-left: 1rem;
-}
-
-.nav-menu a {
-    color: var(--text-primary);
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: var(--transition-smooth);
-    position: relative;
-}
-
-.nav-menu a:hover {
-    color: var(--accent-primary);
-    background-color: rgba(233, 69, 132, 0.1);
-}
-
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent-primary);
-    transition: var(--transition-smooth);
-}
-
-.nav-menu a:hover::after {
-    width: 100%;
-}
-
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.modal.active {
-    display: flex;
-    opacity: 1;
-}
-
-.modal-content {
-    max-width: 90%;
-    max-height: 90%;
-    box-shadow: 0 0 30px rgba(233, 69, 132, 0.3);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.modal-content img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.close-modal {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-    z-index: 1001;
-}
-
-.close-modal:hover {
-    color: var(--accent-primary);
-    transform: rotate(90deg);
-}
-
 /* 返回顶部按钮 */
 #back-to-top {
+    font-family: monospace;
     display: none;
     position: fixed;
     bottom: 30px;
@@ -175,13 +50,12 @@ header {
     background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
     color: white;
     cursor: pointer;
-    padding: 15px;
     border-radius: 50%;
     width: 60px;
     height: 60px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: var(--transition-smooth);
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 #back-to-top:hover {
@@ -189,72 +63,7 @@ header {
     box-shadow: 0 7px 25px rgba(233, 69, 132, 0.5);
 }
 
-
-/* 页脚样式 */
-footer {
-    background-color: var(--bg-secondary);
-    padding: 2rem 0;
-    text-align: center;
-    margin-top: 4rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+#back-to-top:active {
+    transform: scale(0.9);
 }
 
-.footer-content {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-content p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.social-links a {
-    color: var(--text-secondary);
-    font-size: 1.5rem;
-    transition: var(--transition-smooth);
-}
-
-.social-links a:hover {
-    color: var(--accent-primary);
-    transform: translateY(-3px);
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.floating {
-    animation: float 5s ease-in-out infinite;
-}
-
-@media (max-width: 768px) {
-    .main-blog-posts {
-        grid-template-columns: 1fr;
-    }
-
-    .nav-menu {
-        display: none;
-    }
-
-    #live2d-widget {
-        width: 200px;
-        height: 200px;
-    }
-}

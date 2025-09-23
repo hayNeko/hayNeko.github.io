@@ -9,128 +9,102 @@
     <link rel="stylesheet" href="./live2dqw/assets/waifu.min.css">
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <a href="index.html">
-                <div class="logo">neko</div>
-            </a>
-            <ul class="nav-menu">
-                <li><a href="#">home</a></li>
-                <li><a href="#">articles</a></li>
-                <li><a href="#">albums</a></li>
-                <li><a href="#">about</a></li>
-                <li><a href="#">contact</a></li>
-            </ul>
-        </div>
-    </header>
 
+
+    <button id="back-to-top" title="back to top">
+        <i class="fa fa-angle-up">&uparrow;</i>
+    </button>
+
+</body>
+<script>
+    const backToTopButton = document.getElementById('back-to-top');
     
-
-    <button id="back-to-top" title="Back to top">↑</button>
-
-    <div id="live2d-widget"></div>
-
-    <footer>
-        <div class="footer-content">
-            <p>© 2025 Hayneko's blog. |  Designed with ♥</p>
-            <div class="social-links">
-                <a href="#">BiliBili</a>
-                <a href="#">GitHub</a>
-                <a href="#">Twitter</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.onscroll = function() {
-            scrollFunction();
-        };
-        
-        function scrollFunction() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
+    window.onscroll = function() {
+        scrollFunction();
+    };
+    
+    function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
         }
-        
-        backToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+    }
+    
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-        
-        const zoomButtons = document.querySelectorAll('.zoom-btn');
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        const closeModal = document.querySelector('.close-modal');
-        
-        zoomButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const cardImage = this.parentElement.querySelector('img');
-                modalImg.src = cardImage.src;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
+    });
+    
+    const zoomButtons = document.querySelectorAll('.zoom-btn');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeModal = document.querySelector('.close-modal');
+    
+    zoomButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const cardImage = this.parentElement.querySelector('img');
+            modalImg.src = cardImage.src;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
-        
-        closeModal.addEventListener('click', function() {
+    });
+    
+    closeModal.addEventListener('click', function() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
-        });
-        
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        document.querySelectorAll('.blog-card').forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.1}s`;
-        });
-    </script>
+        }
+    });
+    
+    document.querySelectorAll('.blog-card').forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+    });
+</script>
 
-    <script src="live2dqw/assets/jquery.min.js?v=3.3.1"></script>
-    
-    <!-- 实现拖动效果，需引入 JQuery UI -->
-    <script src="live2dqw/assets/jquery-ui.min.js?v=1.12.1"></script>
-    
-    <div class="waifu">
-        <div class="waifu-tips"></div>
-        <canvas id="live2d" class="live2d"></canvas>
-        <div class="waifu-tool">
-            <span class="fui-home"></span>
-            <span class="fui-chat"></span>
-            <span class="fui-eye"></span>
-            <span class="fui-user"></span>
-            <span class="fui-photo"></span>
-            <span class="fui-info-circle"></span>
-            <span class="fui-cross"></span>
-        </div>
+<script src="live2dqw/assets/jquery.min.js?v=3.3.1"></script>
+
+<!-- 实现拖动效果，需引入 JQuery UI -->
+<script src="live2dqw/assets/jquery-ui.min.js?v=1.12.1"></script>
+
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
     </div>
-    
-    <script src="live2dqw/assets/waifu-tips.min.js?v=1.4.2"></script>
-    <script src="live2dqw/assets/live2d.min.js?v=1.0.5"></script>
-    <script type="text/javascript">
-        /* 可直接修改部分参数 */
-        live2d_settings['modelId'] = 2;                  // 默认模型 ID
-        live2d_settings['modelTexturesId'] = 87;         // 默认材质 ID
-        live2d_settings['modelStorage'] = false;         // 不储存模型 ID
-        live2d_settings['canCloseLive2d'] = false;       // 隐藏 关闭看板娘 按钮
-        live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
-        live2d_settings['waifuSize'] = '300x260';        // 看板娘大小
-        live2d_settings['waifuTipsSize'] = '280x100';    // 提示框大小
-        live2d_settings['waifuFontSize'] = '20px';       // 提示框字体
-        live2d_settings['waifuToolFont'] = '24px';       // 工具栏字体
-        live2d_settings['waifuToolLine'] = '30px';       // 工具栏行高
-        live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
-        live2d_settings['waifuDraggable'] = 'axis-x';    // 拖拽样式
-        /* 在 initModel 前添加 */
-        initModel("live2dqw/assets/waifu-tips.json?v=1.4.2")
-    </script>
-</body>
+</div>
+
+<script src="live2dqw/assets/waifu-tips.min.js?v=1.4.2"></script>
+<script src="live2dqw/assets/live2d.min.js?v=1.0.5"></script>
+<script type="text/javascript">
+    /* 可直接修改部分参数 */
+    live2d_settings['modelId'] = 2;                  // 默认模型 ID
+    live2d_settings['modelTexturesId'] = 87;         // 默认材质 ID
+    live2d_settings['modelStorage'] = false;         // 不储存模型 ID
+    live2d_settings['canCloseLive2d'] = false;       // 隐藏 关闭看板娘 按钮
+    live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
+    live2d_settings['waifuSize'] = '300x260';        // 看板娘大小
+    live2d_settings['waifuTipsSize'] = '280x100';    // 提示框大小
+    live2d_settings['waifuFontSize'] = '20px';       // 提示框字体
+    live2d_settings['waifuToolFont'] = '24px';       // 工具栏字体
+    live2d_settings['waifuToolLine'] = '30px';       // 工具栏行高
+    live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
+    live2d_settings['waifuDraggable'] = 'axis-x';    // 拖拽样式
+    /* 在 initModel 前添加 */
+    initModel("live2dqw/assets/waifu-tips.json?v=1.4.2")
+</script>
 </html>
