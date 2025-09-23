@@ -37,11 +37,11 @@ body.light-theme {
     --bg-card: #f0f0f5;
     --accent-primary: #ffffff;
     --accent-secondary: #00b4d8;
-    --text-primary: #dedede;
-    --text-secondary: #fdfdfd;
+    --text-primary: #1d1d1d;
+    --text-secondary: #0a0a0a;
     --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     --transition-smooth: all 0.3s ease;
-    --default-font-color: #f1f1f1;
+    --default-font-color: #0f0f0f;
 
     --selection: #0937b8;
 
@@ -61,8 +61,8 @@ body.light-theme {
             radial-gradient(circle at 10% 20%, rgba(84, 84, 254, 0.8) 0%, transparent 20%),
             radial-gradient(circle at 90% 70%, rgba(74, 57, 255, 0.164) 0%, transparent 20%)
             ;
-    --login-input-focus: #64fde644;
-    --login-input-hover: #75faea61;
+    --login-input-focus: #64fde6c4;
+    --login-input-hover: #75faeadd;
 }
 ::selection {
     background-color: var(--selection);
@@ -98,7 +98,7 @@ header {
     display: flex;
     width: 100%;
     position: fixed;
-    background: #1a1a2e;
+    background: var(--bg-primary);
     z-index: 99;
 }
 header h1::before {
@@ -383,7 +383,7 @@ main {
     transform: translate(95%, -200%) scale(0);
     width: 50vw;
     max-width: 767px;
-    background: #1f1f1f;
+    background: var(--bg-primary);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     opacity: 0;
@@ -407,7 +407,7 @@ main {
 
 .login-modal form {
     display: flex;
-    background: #1f1f1f;
+    background: var(--bg-primary);
     flex-direction: column;
     justify-content: center;
     padding-left: 1vw;
@@ -418,14 +418,14 @@ main {
 
 .login-modal h2 {
     color: var(--default-font-color);
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
     font-family: 'sans-serif', monospace;
 }
 
 .login-modal input {
     padding: 10px;
-    border: 1px solid var(--bg-primary);
+    border: 1px solid var(--sidebar-bg-color);
     border-radius: 50px;
     background: var(--bg-primary);
     color: var(--default-font-color);
@@ -442,7 +442,7 @@ main {
 }
 
 .login-modal button[type="submit"] {
-    color: white;
+    color: var(--default-font-color);
     border: none;
     margin-top: 2vh;
     padding: 10px;
@@ -477,9 +477,9 @@ main {
     color: var(--default-font-color);
     text-decoration: none;
     font-size: 0.75rem;
-    color: #dcdcdc;
+    color: var(--text-primary);
     padding: 10px;
-    background: linear-gradient(to right, #ffffff) no-repeat right bottom;
+    background: linear-gradient(to right, var(--default-font-color)) no-repeat right bottom;
     background-size: 0 2px;
     transition: background-size 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
 }

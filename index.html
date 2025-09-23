@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="indexstyle.css">
     <link rel="stylesheet" href="./live2dqw/assets/waifu.css">
     <link rel="stylesheet" href="./live2dqw/assets/waifu.min.css">
+    <!-- <link rel="stylesheet" href="medias/css/RightCLickMenu.css"> -->
 </head>
 <body>
     <header>
@@ -15,13 +16,13 @@
     <main>
         <section class="sidebar">
             <div class="avatar">
-                <img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" id="protected">
+                <img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
             </div>
-            <a href="index.html" class="box"><i class="fa-solid fa-house"></i><span>home</span></a>
-            <a href="#" class="box"><i class="fa-solid fa-image"></i><span>album</span></a>
-            <a href="#" class="box"><i class="fa-solid fa-user"></i><span>about</span></a>
-            <a href="#" class="box"><i class="fa-solid fa-code"></i><span>projects</span></a>
-            <a href="#" class="box"><i class="fa-solid fa-comment"></i><span>contact</span></a>
+            <a href="index.html" class="box" id="home"><i class="fa-solid fa-house"></i><span>home</span></a>
+            <a href="#" class="box" id="album"><i class="fa-solid fa-image"></i><span>album</span></a>
+            <a href="#" class="box" id="about"><i class="fa-solid fa-user"></i><span>about</span></a>
+            <a href="#" class="box" id="projects"><i class="fa-solid fa-code"></i><span>projects</span></a>
+            <a href="#" class="box" id="contact"><i class="fa-solid fa-comment"></i><span>contact</span></a>
 
             <button class="box btt" id="login"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>login</span></button>
             <button class="box btt" id="theme"><i class="fa-solid fa-moon"></i><span>switch theme</span></button>
@@ -119,9 +120,9 @@
 
     <div class="modal-overlay"></div>
     <div class="login-modal">
-        <img src="medias/picures/side-picture.jpg" alt="avatar">
+        <img src="medias/picures/side-picture.jpg" alt="avatar" class="protected-media">
         <form action="javaScript:get_login()" method="post">
-            <h2 style="color: white; margin-bottom: 20px; text-align: center;">Welcome back</h2>
+            <h2 style="margin-bottom: 20px; text-align: center;">Welcome back</h2>
             <input type="text" placeholder="Username" required>
             <input type="password" placeholder="Password" required>
             <button type="submit">Sign in</button>
@@ -135,14 +136,37 @@
 
 </body>
 <script>
-    const protectedMedia = document.getElementById('protected');
-    protectedMedia.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
+    // media protection
+    const protectedMediaElements = document.querySelectorAll('.protected-media');
+
+    protectedMediaElements.forEach(media => {
+        // disable right-click
+        media.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        // disable drag
+        media.setAttribute('draggable', false);
+        media.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        });
+
+        // disable copying
+        media.addEventListener('copy', function (e) {
+            e.preventDefault();
+        });
     });
-    protectedMedia.setAttribute('draggable', false);
-    protectedMedia.addEventListener('dragstart', function(e) {
-        e.preventDefault();
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+            // alert("You are in debug mode.")
+            // e.preventDefault();
+        }
     });
+
+    // costom right-click menu
+    
+
 
     const backToTopButton = document.getElementById('back-to-top');
     
@@ -180,11 +204,15 @@
         else {
             ;
         }
-    })
+    });
+
+   
     
 
     
 </script>
+
+<!-- <script src="medias/scripts/RightClickMenu.js"></script> -->
 
 <script src="live2dqw/assets/jquery.min.js?v=3.3.1"></script>
 
@@ -258,6 +286,12 @@
         document.querySelector('.login-modal').classList.remove('active');
         this.classList.remove('active');
     });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            document.querySelector('.login-modal').classList.remove('active');
+            document.querySelector('.modal-overlay').classList.remove('active');
+        }
+    })
 
 
     function get_login() {

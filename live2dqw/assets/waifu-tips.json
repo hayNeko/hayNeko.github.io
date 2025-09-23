@@ -26,7 +26,8 @@
         },
         "referrer_hostname": {
             "example.com": ["示例网站"],
-            "www.fghrsh.net": ["FGHRSH 的博客"]
+            "www.fghrsh.net": ["FGHRSH 的博客"],
+            "hayneko.github.io": ["Hayneko 的博客"]
         },
         "model_message": {
             "1": ["来自 Potion Maker 的 Pio 酱 ~"],
@@ -71,7 +72,15 @@
         { "selector": "c-player div.volume", "text": ["在这里可以调整<span style=\"color:#0099cc;\">音量</span>呢"] },
         { "selector": "c-player div.list-button", "text": ["<span style=\"color:#0099cc;\">播放列表</span>里都有什么呢"] },
         { "selector": "c-player div.lyric-button", "text": ["有<span style=\"color:#0099cc;\">歌词</span>的话就能跟着一起唱呢"] },
-        { "selector": ".waifu #live2d", "text": ["干嘛呢你，快把手拿开", "鼠…鼠标放错地方了！"] }
+        { "selector": ".waifu #live2d", "text": ["干嘛呢你，快把手拿开", "鼠…鼠标放错地方了！"] },
+
+        { "selector": "#login", "text": ["请先登录或注册"]},
+        { "selector": "#theme", "text": ["切换主题","深夜时要爱护眼睛呀"]},
+        { "selector": "#search", "text": ["要不要搜索点什么呢？"]},
+
+        { "selector": "#home", "text": ["回到首页"]},
+        { "selector": "#about", "text": ["了解一下我"]},
+        { "selector": "#album", "text": ["看看我的相册"]}
     ],
     "click": [
         {
@@ -93,6 +102,7 @@
         { "date": "04/01", "text": ["悄悄告诉你一个秘密~<span style=\"background-color:#34495e;\">今天是愚人节，不要被骗了哦~</span>"] },
         { "date": "05/01", "text": ["今天是<span style=\"color:#0099cc;\">五一劳动节</span>，计划好假期去哪里了吗~"] },
         { "date": "06/01", "text": ["<span style=\"color:#0099cc;\">儿童节</span>了呢，快活的时光总是短暂，要是永远长不大该多好啊…"] },
+        { "date": "07/21", "text": ["你猜我今天要干什么？（笑）"]},
         { "date": "09/03", "text": ["<span style=\"color:#0099cc;\">中国人民抗日战争胜利纪念日</span>，铭记历史、缅怀先烈、珍爱和平、开创未来。"] },
         { "date": "09/10", "text": ["<span style=\"color:#0099cc;\">教师节</span>，在学校要给老师问声好呀~"] },
         { "date": "10/01", "text": ["<span style=\"color:#0099cc;\">国庆节</span>，新中国已经成立69年了呢"] },
