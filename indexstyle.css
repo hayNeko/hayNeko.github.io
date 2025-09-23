@@ -29,13 +29,15 @@
 
     --login-input-focus: #64fde644;
     --login-input-hover: #75faea61;
+
+    --fixed-text-color: #f2f2f2;
 }
 
 body.light-theme {
     --bg-primary: #f5f5f7;
     --bg-secondary: #ffffff;
     --bg-card: #f0f0f5;
-    --accent-primary: #ffffff;
+    --accent-primary: #244fb6;
     --accent-secondary: #00b4d8;
     --text-primary: #1d1d1d;
     --text-secondary: #0a0a0a;
@@ -94,7 +96,7 @@ body {
     min-height: 100vh;
     display: flex;
 }
-header {
+header[class*="header"] {
     display: flex;
     width: 100%;
     position: fixed;
@@ -132,7 +134,7 @@ header h1:hover::after {
 }
 
 main {
-    display: flex;
+    display: grid;
     min-height: 100vh;
     margin-top: 75px;
 }
@@ -247,9 +249,118 @@ main {
     opacity: 1;
 }
 
-.main-content {
-    max-width: 50vw;
+/* title */
+.title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50vw;
+    width: 200%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
 }
+
+.title header {
+    margin-top: 0;
+    padding-left: 5vw;
+    text-align: left;
+    color: var(--fixed-text-color);
+    text-shadow: 4px 4px 4px #000000;
+}
+
+.title {
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: calc(100vh - 50px);
+    margin-top: 0;
+    padding: 50px 0;
+    overflow: hidden;
+    width: 100vw;
+}
+
+.title header h2 {
+    font-size: 46px;
+    margin-bottom: 10px;
+}
+
+.title header h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.my_avatar {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5vw;
+}
+
+.my_avatar img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: transparent solid 4px;
+    z-index: 3;
+    position: relative;
+}
+
+.glowing_border {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    border-radius: 50%;
+    position: relative;
+}
+
+.glowing_border::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    background-color: #000000ff;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.glowing_border::after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    border-radius: 20px;
+    top: 3px;
+    left: 3px;
+    z-index: 1;
+    top: -25%;
+    left: -25%;
+    background-image: conic-gradient(
+        #ff0000,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #ff00ff,
+        #ff00ff,
+        #ff0001
+    );
+}
+
+
+
+
+/* end title */
 
 .main-content {
     display: flex;

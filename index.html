@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hayneko's first blog!">
+    <meta name="keyword" content="Hayneko, blog, web development">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hayneko's blog</title>
     <link rel="stylesheet" href="indexstyle.css">
     <link rel="stylesheet" href="./live2dqw/assets/waifu.css">
@@ -10,7 +13,7 @@
     <!-- <link rel="stylesheet" href="medias/css/RightCLickMenu.css"> -->
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1></h1>
     </header>
     <main>
@@ -28,6 +31,17 @@
             <button class="box btt" id="theme"><i class="fa-solid fa-moon"></i><span>switch theme</span></button>
             <button class="box btt" id="search"><i class="fa-solid fa-magnifying-glass"></i><span>search</span></button>
     
+        </section>
+        <section class="title">
+            <span class="my_avatar">
+                <div class="glowing_border">
+                    <img src="medias/picures/avatar_square.jpg" alt="my avatar" class="protected-media">
+                </div>
+            </span>
+            <header>
+                <h2>Hayden</h2> <br>
+                <h3>Gamer, Programmer, Designer</h3>
+            </header>
         </section>
     
         <section class="main-content">
@@ -213,10 +227,9 @@
 </script>
 
 <!-- <script src="medias/scripts/RightClickMenu.js"></script> -->
-
+<!-- 
 <script src="live2dqw/assets/jquery.min.js?v=3.3.1"></script>
 
-<!-- 实现拖动效果，需引入 JQuery UI -->
 <script src="live2dqw/assets/jquery-ui.min.js?v=1.12.1"></script>
 
 <div class="waifu">
@@ -231,11 +244,11 @@
         <span class="fui-info-circle"></span>
         <span class="fui-cross"></span>
     </div>
-</div>
+</div> -->
 
-<script src="https://kit.fontawesome.com/1600b40260.js" crossorigin="anonymous"></script>
-<script src="live2dqw/assets/waifu-tips.min.js?v=1.4.2"></script>
-<script src="live2dqw/assets/live2d.min.js?v=1.0.5"></script>
+<!--
+<script src="live2dqw/assets/waifu-tips.js"></script>
+<script src="live2dqw/assets/live2d.js"></script>
 <script type="text/javascript">
     /* 可直接修改部分参数 */
     live2d_settings['modelId'] = 2;                  // 默认模型 ID
@@ -249,11 +262,12 @@
     live2d_settings['waifuToolFont'] = '24px';       // 工具栏字体
     live2d_settings['waifuToolLine'] = '30px';       // 工具栏行高
     live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
-    live2d_settings['waifuDraggable'] = 'axis-x';    // 拖拽样式
+    live2d_settings['waifuDraggable'] = 'disable';    // 拖拽样式
     /* 在 initModel 前添加 */
     initModel("live2dqw/assets/waifu-tips.json?v=1.4.2")
-</script>
+</script> -->
 
+<script src="https://kit.fontawesome.com/1600b40260.js" crossorigin="anonymous"></script>
 <script>
     document.querySelector('#login').addEventListener('click', function (e) {
         const btn = e.target;
@@ -315,7 +329,6 @@
     // 登录后登录框内的输入内容仍然保留
 
     function reset_login_form() {
-        ;
         document.querySelector('.login-modal').classList.remove('active');
         document.querySelector('.modal-overlay').classList.remove('active');
         document.querySelector('input[type="text"]').value = '';
