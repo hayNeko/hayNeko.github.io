@@ -81,11 +81,18 @@ body {
     border-radius: 25px;
     transition: cubic-bezier(0.23, 1, 0.320, 1) 0.5s;
     overflow: hidden;
-    max-height: 40vh;
+    max-height: 45vh;
     margin-top: 25px;
     margin-left: 25px;
     width: 75px;
 }
+
+.shell .avatar img {
+    width: 75px;
+    border-radius: 50%;
+    transition: var(--transition-smooth);
+}
+
 
 .shell .box {
     display: block;
