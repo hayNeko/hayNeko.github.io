@@ -10,6 +10,14 @@
     --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     --transition-smooth: all 0.3s ease;
 }
+::selection {
+    background-color: #742b48;
+    color: #f1f1f1;
+}
+
+a {
+    text-decoration: none;
+}
 
 * {
     margin: 0;
@@ -64,18 +72,18 @@ header {
     font-size: 2rem;
 }
 
+
 .nav-menu {
     display: flex;
     list-style: none;
 }
 
 .nav-menu li {
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 .nav-menu a {
     color: var(--text-primary);
-    text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -181,16 +189,6 @@ header {
     box-shadow: 0 7px 25px rgba(233, 69, 132, 0.5);
 }
 
-/* Live2D看板娘区域 */
-#live2d-widget {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 300px;
-    height: 300px;
-    z-index: 99;
-    pointer-events: none;
-}
 
 /* 页脚样式 */
 footer {
