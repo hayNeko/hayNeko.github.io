@@ -24,10 +24,10 @@
             <a href="#" class="box"><i class="fa-solid fa-user"></i><span>about</span></a>
             <a href="#" class="box"><i class="fa-solid fa-code"></i><span>projects</span></a>
             <a href="#" class="box"><i class="fa-solid fa-comment"></i><span>contact</span></a>
-            <a href="#" class="box"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>login</span></a>
-    
-            <a href="#" class="box"><i class="fa-solid fa-moon"></i><span>switch theme</span></a>
-            <a href="#" class="box"><i class="fa-solid fa-magnifying-glass"></i><span>search</span></a>
+
+            <button class="box btt" id="login"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>login</span></button>
+            <button class="box btt" id="theme"><i class="fa-solid fa-moon"></i><span>switch theme</span></button>
+            <button class="box btt" id="search"><i class="fa-solid fa-magnifying-glass"></i><span>search</span></button>
     
         </section>
     
@@ -150,6 +150,25 @@
             behavior: 'smooth'
         });
     });
+
+    let currentTheme = 1;
+
+    const switchThemeButton = document.getElementById('theme');
+    switchThemeButton.addEventListener('click', function() {
+        switchThemeButton.innerHTML = `<i class="fa-solid fa-${currentTheme === 0? 'moon' : 'sun'}"></i><span>switch theme</span>`;
+        currentTheme ^= 1;
+        if (currentTheme === 0) {
+            document.body.classList.add("light-theme")
+        }
+        else if (currentTheme === 1) {
+            document.body.classList.remove("light-theme")
+        }
+        else {
+            ;
+        }
+    })
+    
+
     
 </script>
 
@@ -188,7 +207,7 @@
     live2d_settings['waifuToolFont'] = '24px';       // 工具栏字体
     live2d_settings['waifuToolLine'] = '30px';       // 工具栏行高
     live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
-    live2d_settings['waifuDraggable'] = 'axis-y';    // 拖拽样式
+    live2d_settings['waifuDraggable'] = 'axis-x';    // 拖拽样式
     /* 在 initModel 前添加 */
     initModel("live2dqw/assets/waifu-tips.json?v=1.4.2")
 </script>
