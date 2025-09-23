@@ -10,11 +10,19 @@
     --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     --transition-smooth: all 0.3s ease;
 
+    --selection: #0937b8;
+
     --sidebar-bg-color: #232347;
     --sidebar-bg-color-hover: #2f2f53;
 
+    --card-button: rgba(238, 138, 176, 0.1);
+    --card-border: rgba(233, 69, 132, 0.3);
+
+
+    --back-to-top: rgba(233, 69, 132, 0.5);
+
     --default-font-color: #f1f1f1;
-    --gradient-primary: linear-gradient(135deg, #e94584 0%, #00b4d8 100%);
+    --gradient-primary: linear-gradient(135deg, #ef95b8 0%, #a2f0ff 100%);
     --gradient-secondary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
@@ -22,7 +30,7 @@ body.light-theme {
     --bg-primary: #f5f5f7;
     --bg-secondary: #ffffff;
     --bg-card: #f0f0f5;
-    --accent-primary: #e94584;
+    --accent-primary: #ffffff;
     --accent-secondary: #00b4d8;
     --text-primary: #dedede;
     --text-secondary: #fdfdfd;
@@ -30,20 +38,27 @@ body.light-theme {
     --transition-smooth: all 0.3s ease;
     --default-font-color: #f1f1f1;
 
+    --selection: #0937b8;
+
     --sidebar-bg-color: #c7bdf5;
     --sidebar-bg-color-hover: #b3b3ff;
+
+    --card-button: rgb(203, 140, 164);
+    --card-border: rgb(244, 139, 179);
+
+    --back-to-top: rgba(233, 69, 132, 0.5);
 
     --gradient-primary: linear-gradient(135deg, #e94584 0%, #00b4d8 100%);
     --gradient-secondary: linear-gradient(135deg, #8e8ef4 0%, #7499ff 100%);
     
     background-image:
-            linear-gradient(to bottom right, rgba(186, 145, 255, 0.581) 0%, transparent 100%),
+            linear-gradient(to bottom right, rgb(185, 145, 255) 0%, transparent 100%),
             radial-gradient(circle at 10% 20%, rgba(84, 84, 254, 0.8) 0%, transparent 20%),
-            radial-gradient(circle at 90% 70%, rgba(73, 57, 255, 0.835) 0%, transparent 20%)
+            radial-gradient(circle at 90% 70%, rgba(74, 57, 255, 0.164) 0%, transparent 20%)
             ;
 }
 ::selection {
-    background-color: #0937b8;
+    background-color: var(--selection);
     color: #ffffff;
 }
 
@@ -79,9 +94,6 @@ header {
     background: #1a1a2e;
     z-index: 99;
 }
-header a {
-    color: var(--text-primary);
-}
 header h1::before {
     content: "HAYNEKO'S BLOG";
     transition: 0.25s ease;
@@ -92,7 +104,7 @@ header h1 {
     font-size: 2rem;
 }
 header h1::after {
-    content: "MAIN PAGE";
+    content: "DESIGN WITH LOVE";
     position: absolute;
     top: 5px;
     left: 15px;
@@ -141,7 +153,7 @@ main {
 
 #back-to-top:hover {
     transform: translateY(-5px);
-    box-shadow: 0 7px 25px rgba(233, 69, 132, 0.5);
+    box-shadow: 0 7px 25px var(--back-to-top);
 }
 
 #back-to-top:active {
@@ -312,12 +324,12 @@ main {
 
 .card-button {
     padding: 8px 15px;
-    background: rgba(233, 69, 132, 0.1);
+    background: var(--card-button);
     color: var(--accent-primary);
     border-radius: 8px;
     font-size: 0.9rem;
     transition: var(--transition-smooth);
-    border: 1px solid rgba(233, 69, 132, 0.3);
+    border: 1px solid var(--card-border);
 }
 
 .card-button:hover {
