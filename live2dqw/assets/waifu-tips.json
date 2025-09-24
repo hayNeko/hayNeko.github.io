@@ -75,12 +75,14 @@
         { "selector": ".waifu #live2d", "text": ["干嘛呢你，快把手拿开", "鼠…鼠标放错地方了！"] },
 
         { "selector": "#login", "text": ["请先登录或注册"]},
-        { "selector": "#theme", "text": ["切换主题","深夜时要爱护眼睛呀"]},
-        { "selector": "#search", "text": ["要不要搜索点什么呢？"]},
+        { "selector": "#theme", "text": ["切换主题", "深夜时要爱护眼睛呀"]},
+        { "selector": "#search", "text": ["要不要搜索点什么呢？（其实根本没做这部分）"]},
 
         { "selector": "#home", "text": ["回到首页"]},
+        { "selector": "#album", "text": ["看看我的相册"]},
         { "selector": "#about", "text": ["了解一下我"]},
-        { "selector": "#album", "text": ["看看我的相册"]}
+        { "selector": "#projects", "text": ["看看我日常摸鱼的成果~"]},
+        { "selector": "#contact", "text": ["聊个天"]}
     ],
     "click": [
         {

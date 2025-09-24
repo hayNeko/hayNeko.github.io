@@ -443,6 +443,7 @@ header[class*="header"] h1:hover::after {
 .login-modal form {
     display: flex;
     background: var(--bg-primary);
+    min-width: 50%;
     flex-direction: column;
     justify-content: center;
     padding-left: 1vw;
