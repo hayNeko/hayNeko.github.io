@@ -87,6 +87,7 @@ body.light-theme {
     color: #ffffff;
 }
 
+
 a {
     text-decoration: none;
     color: #f0fef0;
@@ -120,6 +121,9 @@ header[class*="header"] {
     background: var(--header-bg);
     z-index: 99;
 }
+.width-detection {
+    display: none;
+}
 header[class*="header"] h1::before {
     content: "HAYNEKO'S BLOG";
     transition: 0.25s ease;
@@ -148,6 +152,36 @@ header[class*="header"] h1:hover::before {
 header[class*="header"] h1:hover::after {
     transform: translateY(0);
     opacity: 1;
+}
+
+@media (max-width: 776px) {
+    .width-detection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100vw;
+        min-height: 100vh;
+        z-index: 99;
+        background-color: var(--bg-primary);
+        transition: all 0.5s ease;
+    }
+    .width-detection h2 {
+        font-size: 4vw;
+        margin-top: 50px;
+    }
+    .width-detection img {
+        border-radius: 50%;
+        width: 35%;
+        height: 35%;
+    }
+
+    .main-content-box {
+        display: none;
+    }
 }
 
 /* 返回顶部按钮 */
