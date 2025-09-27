@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hayneko's first blog!">
-    <meta name="keyword" content="Hayneko, blog, web development">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hayneko's blog</title>
-    <link rel="stylesheet" href="indexstyle.css">
-    <link rel="stylesheet" href="./live2dqw/assets/waifu.css">
-    <link rel="stylesheet" href="medias/css/login-modal-gen.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Hayneko's first blog!">
+	<meta name="keyword" content="Hayneko, blog, web development">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Hayneko's blog</title>
+	
+	<!-- base theme color definition, 1st-->
+	<link rel="stylesheet" href="root-theme-colors.css">
+	
+	<link rel="stylesheet" href="live2dqw/assets/waifu.css">
+	
+	<link rel="stylesheet" href="indexstyle.css">
+	<link rel="stylesheet" href="medias/css/login-modal-gen.css">
+	<link rel="stylesheet" href="medias/css/main-content-box-gen.css">
+	<link rel="stylesheet" href="medias/css/codesection.css">
 </head>
 <body>
-    <div class="width-detection">
-        <img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
-        <h2>Please use a larger screen to view this page.</h2>
-    </div>
-    <header class="header">
-        <h1></h1>
-    </header>
-    <main>
-        <section class="sidebar">
-            <div class="avatar">
-                <img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
-            </div>
-            <a href="index.html" class="box" id="home"><i class="fa-solid fa-house"></i><span>home</span></a>
-            <a href="#" class="box" id="album"><i class="fa-solid fa-image"></i><span>album</span></a>
-            <a href="#" class="box" id="about"><i class="fa-solid fa-user"></i><span>about</span></a>
-            <a href="#" class="box" id="projects"><i class="fa-solid fa-code"></i><span>projects</span></a>
-            <a href="#" class="box" id="contact"><i class="fa-solid fa-comment"></i><span>contact</span></a>
-
-            <button class="box btt" id="login"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>login</span></button>
-            <button class="box btt" id="theme"><i class="fa-solid fa-moon"></i><span>switch theme</span></button>
-            <button class="box btt" id="search"><i class="fa-solid fa-magnifying-glass"></i><span>search</span></button>
-        
-    
-        </section>
-        <section class="title">
-            <span class="my_avatar">
-                <div class="glowing_border">
-                    <img src="medias/picures/avatar_square.jpg" alt="my avatar" class="protected-media">
-                </div>
-            </span>
-            <header>
-                <h2>Hayden</h2> <br>
-                <h3>Gamer, Programmer, Designer</h3>
-            </header>
-        </section>
-    
+	<div class="width-detection">
+		<img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
+		<h2>Please use a larger screen to view this page.</h2>
+	</div>
+	<header class="header">
+		<h1></h1>
+	</header>
+	<main>
+		<section class="sidebar">
+			<div class="avatar">
+				<img src="medias/picures/avatarMikuHatsune.jpg" alt="Hayneko's blog" class="protected-media">
+			</div>
+			<a href="index.html" class="box" id="home"><i class="fa-solid fa-house"></i><span>home</span></a>
+			<a href="#" class="box" id="album"><i class="fa-solid fa-image"></i><span>album</span></a>
+			<a href="#" class="box" id="about"><i class="fa-solid fa-user"></i><span>about</span></a>
+			<a href="#" class="box" id="projects"><i class="fa-solid fa-code"></i><span>projects</span></a>
+			<a href="#" class="box" id="contact"><i class="fa-solid fa-comment"></i><span>contact</span></a>
+			
+			<button class="box btt" id="login"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>login</span></button>
+			<button class="box btt" id="theme"><i class="fa-solid fa-moon"></i><span>switch theme</span></button>
+			<button class="box btt" id="search"><i class="fa-solid fa-magnifying-glass"></i><span>search</span></button>
+		
+		
+		</section>
+		<section class="title">
+			<span class="my_avatar">
+				<div class="glowing_border">
+					<img src="medias/picures/avatar_square.jpg" alt="my avatar" class="protected-media">
+				</div>
+			</span>
+			<header>
+				<h2>Hayden</h2> <br>
+				<h3>Gamer, Programmer, Designer</h3>
+			</header>
+		</section>
+		
 <section class="main-content-box">
-    <section class="personal-info-box">
-        <h2>Personal Information</h2>
-    </section>
-    <div class="content-cards">
-    </div>
+	<section class="personal-info-box">
+		<h2>Personal Information</h2>
+	</section>
+	<div class="content-cards">
+	</div>
 </section>
 
-    </main>
+</main>
 
 
 
@@ -68,25 +75,24 @@
 
 
 
-    <button id="back-to-top" title="back to top">
-        <i class="fa fa-angle-up"></i>
-    </button>
+	<button id="back-to-top" title="back to top">
+		<i class="fa fa-angle-up"></i>
+	</button>
 
-    <div class="modal-overlay"></div>
-    <div class="login-modal">
-        <img src="medias/picures/side-picture.jpg" alt="avatar" class="protected-media">
-        <form action="javaScript:get_login()" method="post">
-            <h2 style="margin-bottom: 20px; text-align: center;">Welcome back</h2>
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Sign in</button>
-            <div class="other_options">
-                <a href="#">Forgot password?</a>
-                <a href="#">Create an account</a>
-    
-            </div>
-        </form>
-    </div>
+	<div class="modal-overlay"></div>
+	<div class="login-modal">
+		<img src="medias/picures/side-picture.jpg" alt="avatar" class="protected-media">
+		<form action="javaScript:get_login()" method="post">
+			<h2 style="margin-bottom: 20px; text-align: center;">Welcome back</h2>
+			<input type="text" placeholder="Username" required>
+			<input type="password" placeholder="Password" required>
+			<button type="submit">Sign in</button>
+			<div class="other_options">
+				<a href="#">Forgot password?</a>
+				<a href="#">Create an account</a>
+			</div>
+		</form>
+	</div>
 
 </body>
 <script>
@@ -188,21 +194,21 @@
 <script src="live2dqw/assets/waifu-tips.js"></script>
 <script src="live2dqw/assets/live2d.js"></script>
 <script type="text/javascript">
-    /* 可直接修改部分参数 */
-    live2d_settings['modelId'] = 2;                  // 默认模型 ID
-    live2d_settings['modelTexturesId'] = 87;         // 默认材质 ID
-    live2d_settings['modelStorage'] = false;         // 不储存模型 ID
-    live2d_settings['canCloseLive2d'] = false;       // 隐藏 关闭看板娘 按钮
-    live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
-    live2d_settings['waifuSize'] = '400x350';        // 看板娘大小
-    live2d_settings['waifuTipsSize'] = '280x100';    // 提示框大小
-    live2d_settings['waifuFontSize'] = '20px';       // 提示框字体
-    live2d_settings['waifuToolFont'] = '24px';       // 工具栏字体
-    live2d_settings['waifuToolLine'] = '30px';       // 工具栏行高
-    live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
-    live2d_settings['waifuDraggable'] = 'disable';    // 拖拽样式
-    /* 在 initModel 前添加 */
-    initModel("live2dqw/assets/waifu-tips.json?v=1.4.2")
+	/* 可直接修改部分参数 */
+	live2d_settings['modelId'] = 2;                  // 默认模型 ID
+	live2d_settings['modelTexturesId'] = 87;         // 默认材质 ID
+	live2d_settings['modelStorage'] = false;         // 不储存模型 ID
+	live2d_settings['canCloseLive2d'] = false;       // 隐藏 关闭看板娘 按钮
+	live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
+	live2d_settings['waifuSize'] = '400x350';        // 看板娘大小
+	live2d_settings['waifuTipsSize'] = '280x100';    // 提示框大小
+	live2d_settings['waifuFontSize'] = '20px';       // 提示框字体
+	live2d_settings['waifuToolFont'] = '24px';       // 工具栏字体
+	live2d_settings['waifuToolLine'] = '30px';       // 工具栏行高
+	live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
+	live2d_settings['waifuDraggable'] = 'disable';    // 拖拽样式
+	/* 在 initModel 前添加 */
+	initModel("live2dqw/assets/waifu-tips.json?v=1.4.2")
 </script>
 
 <script src="https://kit.fontawesome.com/1600b40260.js" crossorigin="anonymous"></script>

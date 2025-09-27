@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); */
+/* 基础样式与暗色主题 */
 @import url("root-theme-colors.css");
 
 ::-webkit-scrollbar {
@@ -11,7 +11,6 @@
 ::-webkit-scrollbar-thumb {
     background-color: var(--accent-primary)
 }
-/* 基础样式与暗色主题 */
 ::selection {
     background-color: var(--selection);
     color: #ffffff;
