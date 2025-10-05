@@ -84,7 +84,7 @@ header[class*="header"] h1:hover::after {
 	opacity: 1;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 776px) {
 .width-detection {
 	display: flex;
 	flex-direction: column;
@@ -109,8 +109,8 @@ header[class*="header"] h1:hover::after {
 	height: 35%;
 }
 
-.main-content-box {
-	display: none;
+body {
+	overflow: hidden;
 }
 }
 

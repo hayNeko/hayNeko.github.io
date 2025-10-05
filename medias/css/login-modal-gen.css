@@ -8,7 +8,6 @@
     transform: translate(95%, -200%) scale(0);
     width: 50vw;
     max-width: 767px;
-    background: var(--bg-primary);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     opacity: 0;
@@ -32,7 +31,6 @@
 
 .login-modal form {
     display: flex;
-    background: var(--bg-primary);
     min-width: 50%;
     flex-direction: column;
     justify-content: center;
@@ -43,7 +41,7 @@
 }
 
 .login-modal h2 {
-    color: var(--default-font-color);
+    color: var(--fixed-text-color);
     font-size: 1.5rem;
     margin-bottom: 20px;
     font-family: 'sans-serif', monospace;
@@ -54,7 +52,7 @@
     border: 1px solid var(--sidebar-bg-color);
     border-radius: 50px;
     background: var(--bg-primary);
-    color: var(--default-font-color);
+    color: var(--fixed-text-color);
     transition: all 0.25s;
 }
 
@@ -68,7 +66,7 @@
 }
 
 .login-modal button[type="submit"] {
-    color: var(--default-font-color);
+    color: var(--fixed-text-color);
     border: none;
     margin-top: 2vh;
     padding: 10px;
@@ -100,18 +98,17 @@
 }
 
 .login-modal .other_options a {
-    color: var(--default-font-color);
+    color: var(--fixed-text-color);
     text-decoration: none;
     font-size: 0.75rem;
-    color: var(--text-primary);
     padding: 10px;
-    background: linear-gradient(to right, var(--default-font-color)) no-repeat right bottom;
+    background: linear-gradient(to right, var(--fixed-text-color)) no-repeat right bottom;
     background-size: 0 2px;
     transition: background-size 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .login-modal .other_options a:hover {
-    color: var(--default-font-color);
+    color: var(--fixed-text-color);
     background-position-x: left;
     background-size: 100% 2px;
 }
