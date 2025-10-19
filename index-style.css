@@ -81,6 +81,7 @@ header[class*="header"] h1:hover::before {
 }
 header[class*="header"] h1:hover::after {
 	transform: translateY(0);
+	/* animation: font-color-change 0.5s ease infinite; */
 	opacity: 1;
 }
 
@@ -333,7 +334,7 @@ main {
 		left: 0;
 		min-width: 100vw;
 		min-height: 100vh;
-		z-index: 99;
+		z-index: 65535;
 		background-color: var(--bg-primary);
 		transition: all 0.5s ease;
 	}
@@ -341,6 +342,18 @@ main {
 		font-size: 4vw;
 		margin-top: 50px;
 		animation: font-color-change 5s infinite;
+	}
+	.width-detection h3 {
+		background: var(--bg-secondary);
+		font-weight: 500;
+		border-radius: 10px;
+		margin-top: 20px;
+		padding: 10px;
+		width: 85%;
+	}
+	.width-detection h3 strong {
+		font-weight: 700;
+		color: var(--accent-primary);
 	}
 	.width-detection img {
 		border-radius: 50%;
@@ -360,30 +373,25 @@ main {
 	0% {
 		color: #FF0000;
 	}
-	12.5% {
+	16.67% {
 		color: #FFFF00;
 	}
-	25% {
+	33.33% {
 		color: #00FF00;
 	}
-	37.5% {
+	50% {
 		color: #00FFFF;
 	}
-	50% {
+	66.67% {
 		color: #0000FF;
 	}
-	62.5% {
+	83.33% {
 		color: #FF00FF;
-	}
-	75% {
-		color: #FF00FF;
-	}
-	87.5% {
-		color: #FF0000;
 	}
 	100% {
 		color: #FF0000;
 	}
+	
 }
 
 @keyframes avatar-shaking {

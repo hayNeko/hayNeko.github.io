@@ -1,6 +1,7 @@
 :root {
     --bg-primary: #0f0f1a;
     --bg-secondary: #1a1a2e;
+    --bg-primary-translucent: #0f0f1a40;
     --bg-card: #16213e;
     --accent-primary: #e94584;
     --accent-secondary: #00b4d8;
@@ -37,6 +38,7 @@
 body.light-theme {
     --bg-primary: #f5f5f7;
     --bg-secondary: #ffffff;
+    --bg-primary-translucent: #f5f5f740;
     --bg-card: #f0f0f5;
     --accent-primary: #244fb6;
     --accent-secondary: #00b4d8;

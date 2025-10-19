@@ -10,6 +10,7 @@
 
 .main-content__personal-info {
     width: 80%;
+    margin: auto;
 }
 
 .main-content__personal-info__avatar {
