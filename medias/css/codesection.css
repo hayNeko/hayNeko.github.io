@@ -1,0 +1,16 @@
+/* this file supplies a basic style for code sections */
+.code-section {
+    background-color: var(--bg-primary);
+    border-radius: 20px;
+}
+
+.code-section__language {
+    line-height: 1;
+    color: var(--text-secondary);
+    background-color: var(--code-section-language-bg);
+    border-radius: 20px 20px 0 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 25px;
+    padding: 20px 20px 20px;
+}

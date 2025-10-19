@@ -3,7 +3,8 @@
 
 ::-webkit-scrollbar {
 	background-color: var(--bg-primary);
-	width: min(15px, 1vw);
+	width: 5px;
+	height: 5px;
 }
 ::-webkit-scrollbar-button {
 	display: none;
@@ -27,21 +28,26 @@ a {
 	padding: 0;
 	box-sizing: border-box;
 }
+html {
+	min-width: 100%;
+}
 
 body {
 	font-family: sans-serif;
 	background-color: var(--bg-primary);
 	color: var(--text-primary);
-	line-height: 1.6;
-	overflow-x: hidden;
+	line-height: 1.25;
+	/* overflow-x: hidden; */
 	background-image:
 		linear-gradient(to bottom right, rgba(123, 55, 242, 0.359) 0%, transparent 100%),
 		radial-gradient(circle at 10% 20%, rgba(28, 28, 54, 0.8) 0%, transparent 20%),
 		radial-gradient(circle at 90% 70%, rgba(42, 39, 79, 0.5) 0%, transparent 20%)
 		;
 	min-height: 100vh;
-	display: flex;
+	/* display: flex; */
 	user-select: text;
+	word-wrap: normal;
+	min-width: 100%;
 }
 header[class*="header"] {
 	display: flex;
@@ -225,7 +231,7 @@ header[class*="header"] h1:hover::after {
 	background-size: cover;
 	margin-top: 0;
 	overflow: hidden;
-	width: 100vw;
+	min-width: 100%;
 
 }
 .title header {
@@ -321,6 +327,7 @@ header[class*="header"] h1:hover::after {
 main {
 	display: grid;
 	min-height: 100vh;
+
 }
 
 

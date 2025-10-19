@@ -1,16 +1,13 @@
 .main-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     width: 100%;
-    margin: 0 5vw 0;
+    padding: 0 5vw 100px;
 }
 
 .main-content__personal-info {
-    width: 80%;
-    margin: auto;
+    width: 100%;
 }
 
 .main-content__personal-info__avatar {
