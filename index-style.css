@@ -84,36 +84,6 @@ header[class*="header"] h1:hover::after {
 	opacity: 1;
 }
 
-@media (max-width: 776px) {
-.width-detection {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	top: 0;
-	left: 0;
-	min-width: 100vw;
-	min-height: 100vh;
-	z-index: 99;
-	background-color: var(--bg-primary);
-	transition: all 0.5s ease;
-}
-.width-detection h2 {
-	font-size: 4vw;
-	margin-top: 50px;
-}
-.width-detection img {
-	border-radius: 50%;
-	width: 35%;
-	height: 35%;
-}
-
-body {
-	overflow: hidden;
-}
-}
-
 /* 返回顶部按钮 */
 #back-to-top {
 	font-family: monospace;
@@ -328,14 +298,14 @@ body {
 	top: -25%;
 	left: -25%;
 	background-image: conic-gradient(
-	#ff0000,
-	#ffff00,
-	#00ff00,
-	#00ffff,
-	#0000ff,
-	#ff00ff,
-	#ff00ff,
-	#ff0001
+		#ff0000,
+		#ffff00,
+		#00ff00,
+		#00ffff,
+		#0000ff,
+		#ff00ff,
+		#ff00ff,
+		#ff0000
 	);
 }
 
@@ -349,4 +319,100 @@ body {
 main {
 	display: grid;
 	min-height: 100vh;
+}
+
+
+@media (max-width: 776px) {
+	.width-detection {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: fixed;
+		top: 0;
+		left: 0;
+		min-width: 100vw;
+		min-height: 100vh;
+		z-index: 99;
+		background-color: var(--bg-primary);
+		transition: all 0.5s ease;
+	}
+	.width-detection h2 {
+		font-size: 4vw;
+		margin-top: 50px;
+		animation: font-color-change 5s infinite;
+	}
+	.width-detection img {
+		border-radius: 50%;
+		width: 35%;
+		height: 35%;
+		animation: avatar-shaking 0.5s infinite;
+	}
+
+	body {
+		overflow: hidden;
+	}
+	
+	
+}
+
+@keyframes font-color-change {
+	0% {
+		color: #FF0000;
+	}
+	12.5% {
+		color: #FFFF00;
+	}
+	25% {
+		color: #00FF00;
+	}
+	37.5% {
+		color: #00FFFF;
+	}
+	50% {
+		color: #0000FF;
+	}
+	62.5% {
+		color: #FF00FF;
+	}
+	75% {
+		color: #FF00FF;
+	}
+	87.5% {
+		color: #FF0000;
+	}
+	100% {
+		color: #FF0000;
+	}
+}
+
+@keyframes avatar-shaking {
+	0% {
+		transform: translateX(0px) translateY(0px);
+	}
+	12.5% {
+		transform: translateX(5px) translateY(-2.5px);
+	}
+	25% {
+		transform: translateX(-5px) translateY(2.5px);
+	}
+	37.5% {
+		transform: translateX(2.5px) translateY(-5px);
+	}
+	50% {
+		transform: translateX(-2.5px) translateY(5px);
+	}
+	62.5% {
+		transform: translateX(2.5px) translateY(-2.5px);
+	}
+	75% {
+		transform: translateX(0px) translateY(2.5px);
+	}
+	87.5% {
+		transform: translateX(5px) translateY(0px);
+	}
+	100% {
+		transform: translateX(-2.5px) translateY(-5px);
+	}
+	
 }

@@ -1,0 +1,19 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin: 0 5vw 0;
+}
+
+.main-content__personal-info {
+    width: 80%;
+}
+
+.main-content__personal-info__avatar {
+    width: 170px;
+    height: 150px;
+    border-radius: 20px;
+}
