@@ -44,7 +44,7 @@
     color: var(--fixed-text-color);
     font-size: 1.5rem;
     margin-bottom: 20px;
-    font-family: 'sans-serif', monospace;
+    font-family: serif;
 }
 
 .login-modal input {
@@ -54,6 +54,7 @@
     background: var(--bg-primary);
     color: var(--fixed-text-color);
     transition: all 0.25s;
+    font-family: monospace;
 }
 
 .login-modal input:focus {
