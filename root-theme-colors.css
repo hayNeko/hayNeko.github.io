@@ -30,6 +30,8 @@
     --fixed-text-color: #f2f2f2;
 
     --header-bg: #1a1a2e7f;
+
+    --border-color: #28a3ef;
 }
 
 body.light-theme {
